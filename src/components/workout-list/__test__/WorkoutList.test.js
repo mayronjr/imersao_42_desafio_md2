@@ -17,7 +17,6 @@ afterEach(cleanup)
 it('renders without crashing', ()=>{
     const div = document.createElement('div')
     ReactDOM.render(<WorkoutList/>, div)
-    // console.log(div.innerHTML)
 })
 
 it('renders Counter Correctly', ()=>{

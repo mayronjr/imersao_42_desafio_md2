@@ -7,18 +7,12 @@ exports[`matches snapshot 1`] = `
 >
   <div
     className="col-sm-4"
-  >
-    3
-  </div>
+  />
   <div
     className="col-sm-4"
-  >
-    Swimming
-  </div>
+  />
   <div
     className="col-sm-4"
-  >
-    9/24/2011
-  </div>
+  />
 </div>
 `;

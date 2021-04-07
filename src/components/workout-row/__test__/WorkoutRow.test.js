@@ -12,8 +12,6 @@ const list = [
     { tempo: 3, type: 'Swimming', date: new Date(2011, 8, 24) }
 ]
 
-list[0].date.toLocaleDateString()
-
 afterEach(cleanup)
 
 it('renders without crashing', ()=>{
@@ -22,12 +20,22 @@ it('renders without crashing', ()=>{
 })
 
 it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow item={{...list[0], id: 0}}/>)
-    expect(getByTestId('row-0')).toHaveTextContent("1Run11/24/2011")
+    const {getByTestId} = render(<WorkoutRow item={{
+        col1: 1,
+        col2: 'teste',
+        col3: 'date',
+        id: 0
+    }}/>)
+    expect(getByTestId('row-0')).toHaveTextContent("1testedate")
 })
 
 it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow  item={{...list[1], id: 1}}/>)
+    const {getByTestId} = render(<WorkoutRow  item={{
+        col1: list[1].tempo,
+        col2: list[1].type,
+        col3: list[1].date.toLocaleDateString(),
+        id: 1
+    }}/>)
     expect(getByTestId('row-1')).toHaveTextContent("3Swimming9/24/2011")
 })
 
