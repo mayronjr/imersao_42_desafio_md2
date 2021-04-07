@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        First Commit
+        Workout Log
       </header>
-      <div>
-        First Commit
-      </div>
+      <div className="container">Entry Form</div>
+      <div className="container">List of Workouts</div>
+      <div className="container">Total length of Workout</div>
     </div>
   );
 }
