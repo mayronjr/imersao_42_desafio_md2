@@ -14,7 +14,7 @@ const list = [
 
 list[0].date.toLocaleDateString()
 
-// afterEach(cleanup)
+afterEach(cleanup)
 
 it('renders without crashing', ()=>{
     const div = document.createElement('div')
@@ -22,16 +22,16 @@ it('renders without crashing', ()=>{
 })
 
 it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow item={list[0]} id={0}/>)
+    const {getByTestId} = render(<WorkoutRow item={{...list[0], id: 0}}/>)
     expect(getByTestId('row-0')).toHaveTextContent("1Run11/24/2011")
 })
 
 it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow  item={list[1]} id={1}/>)
+    const {getByTestId} = render(<WorkoutRow  item={{...list[1], id: 1}}/>)
     expect(getByTestId('row-1')).toHaveTextContent("3Swimming9/24/2011")
 })
 
 it('matches snapshot', ()=>{
-    const tree = renderer.create(<WorkoutRow counter={3}/>).toJSON()
+    const tree = renderer.create(<WorkoutRow item={{...list[1], id: 1}}/>).toJSON()
     expect(tree).toMatchSnapshot()
 })
