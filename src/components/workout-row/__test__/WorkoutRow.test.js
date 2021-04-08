@@ -20,7 +20,7 @@ it('renders without crashing', () => {
     ReactDOM.render(<WorkoutRow />, doc)
 })
 
-it('renders Counter Correctly', () => {
+it('renders WorkoutRow Correctly', () => {
     const { getByTestId } = render(<table><tbody>
         <WorkoutRow item={{
             col1: 1,
@@ -32,7 +32,7 @@ it('renders Counter Correctly', () => {
     expect(getByTestId('row-0')).toHaveTextContent("1testedate")
 })
 
-it('renders Counter Correctly', () => {
+it('renders WorkoutRow Correctly', () => {
     const { getByTestId } = render(<table><tbody>
         <WorkoutRow item={{
             col1: list[1].tempo,

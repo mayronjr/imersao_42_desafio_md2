@@ -19,7 +19,7 @@ it('renders without crashing', ()=>{
     ReactDOM.render(<WorkoutList/>, div)
 })
 
-it('renders Counter Correctly', ()=>{
+it('renders WorkoutList Correctly', ()=>{
     const {getByTestId} = render(<WorkoutList list={list}/>)
     expect(getByTestId('row-0')).toHaveTextContent("1Run11/24/2011")
     expect(getByTestId('row-1')).toHaveTextContent("3Swimming9/24/2011")
