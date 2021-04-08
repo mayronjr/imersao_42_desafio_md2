@@ -1,49 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<div
-  className="container"
-  data-testid="counter"
+<table
+  className="container table table-bordered"
+  data-testid="workout-list"
 >
-  <div
-    className="row-0"
-    data-testid="row-0"
-  >
-    <div
-      className="col-sm-4"
+  <tbody>
+    <tr
+      data-testid="row--1"
     >
-      1
-    </div>
-    <div
-      className="col-sm-4"
+      <td>
+        Tempo
+      </td>
+      <td>
+        Tipo
+      </td>
+      <td>
+        Data
+      </td>
+      <td />
+    </tr>
+    <tr
+      data-testid="row-0"
     >
-      Run
-    </div>
-    <div
-      className="col-sm-4"
+      <td>
+        1
+      </td>
+      <td>
+        Run
+      </td>
+      <td>
+        11/24/2011
+      </td>
+      <td>
+        Excluir
+      </td>
+    </tr>
+    <tr
+      data-testid="row-1"
     >
-      11/24/2011
-    </div>
-  </div>
-  <div
-    className="row-1"
-    data-testid="row-1"
-  >
-    <div
-      className="col-sm-4"
-    >
-      3
-    </div>
-    <div
-      className="col-sm-4"
-    >
-      Swimming
-    </div>
-    <div
-      className="col-sm-4"
-    >
-      9/24/2011
-    </div>
-  </div>
-</div>
+      <td>
+        3
+      </td>
+      <td>
+        Swimming
+      </td>
+      <td>
+        9/24/2011
+      </td>
+      <td>
+        Excluir
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;

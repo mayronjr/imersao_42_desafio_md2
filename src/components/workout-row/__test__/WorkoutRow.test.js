@@ -14,32 +14,44 @@ const list = [
 
 afterEach(cleanup)
 
-it('renders without crashing', ()=>{
-    const div = document.createElement('div')
-    ReactDOM.render(<WorkoutRow/>, div)
+it('renders without crashing', () => {
+    const doc = document.createElement('table')
+    doc.appendChild(document.createElement('tbody'))
+    ReactDOM.render(<WorkoutRow />, doc)
 })
 
-it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow item={{
-        col1: 1,
-        col2: 'teste',
-        col3: 'date',
-        id: 0
-    }}/>)
+it('renders Counter Correctly', () => {
+    const { getByTestId } = render(<table><tbody>
+        <WorkoutRow item={{
+            col1: 1,
+            col2: 'teste',
+            col3: 'date',
+            id: 0
+        }} />
+    </tbody></table>)
     expect(getByTestId('row-0')).toHaveTextContent("1testedate")
 })
 
-it('renders Counter Correctly', ()=>{
-    const {getByTestId} = render(<WorkoutRow  item={{
-        col1: list[1].tempo,
-        col2: list[1].type,
-        col3: list[1].date.toLocaleDateString(),
-        id: 1
-    }}/>)
+it('renders Counter Correctly', () => {
+    const { getByTestId } = render(<table><tbody>
+        <WorkoutRow item={{
+            col1: list[1].tempo,
+            col2: list[1].type,
+            col3: list[1].date.toLocaleDateString(),
+            id: 1
+        }} />
+    </tbody></table>)
     expect(getByTestId('row-1')).toHaveTextContent("3Swimming9/24/2011")
 })
 
-it('matches snapshot', ()=>{
-    const tree = renderer.create(<WorkoutRow item={{...list[1], id: 1}}/>).toJSON()
+it('matches snapshot', () => {
+    const tree = renderer.create(<table><tbody>
+        <WorkoutRow item={{
+            col1: list[1].tempo,
+            col2: list[1].type,
+            col3: list[1].date.toLocaleDateString(),
+            id: 1
+        }} />
+    </tbody></table>).toJSON()
     expect(tree).toMatchSnapshot()
 })
