@@ -1,0 +1,7 @@
+.WorkoutForm{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    user-select: none;
+}
