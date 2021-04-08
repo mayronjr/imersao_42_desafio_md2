@@ -1,16 +1,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Component} from 'react'
+import {Component} from 'react';
 
+import WorkoutForm from './components/workout-input/WorkoutForm.js';
 import WorkoutList from './components/workout-list/WorkoutList.js';
 import Counter from './components/hour-counter/Counter.js';
 
 class App extends Component {
   state = {
-    workoutList: [
-      { tempo: 1, type: 'Run', date: new Date(2011, 10, 24) },
-      { tempo: 3, type: 'Swimming', date: new Date(2011, 8, 24) }
-    ]
+    workoutList: []
+  }
+
+  handleNewWorkoutSubmition = (newWorkout) =>{
+    let {workoutList} = this.state
+    workoutList = workoutList.concat(newWorkout)
+    this.setState({workoutList})
   }
 
   render(){
@@ -24,7 +28,7 @@ class App extends Component {
         <header className="App-header">
           Workout Log
         </header>
-        <div className="container">Entry Form</div>
+        <WorkoutForm onSubmit={this.handleNewWorkoutSubmition.bind(this)}/>
         <WorkoutList list={workoutList}/>
         <Counter counter={temp}/>
       </div>

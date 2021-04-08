@@ -11,7 +11,8 @@ class WorkoutForm extends Component {
         this.state = {
             valueInput1: 1,
             valueInput2: aux,
-            min: aux
+            min: aux,
+            selectionList: ['Run', 'Swimming', 'Bike']
         }
     }
 
@@ -31,10 +32,11 @@ class WorkoutForm extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault()
+        let date = e.target.date.value.split('-')
         let newWorkout = {
             tempo: Number(e.target.time.value),
             type: e.target.type.value,
-            date: new Date(e.target.date.value)
+            date: new Date(date[1] + '/' + date[2] + '/' + date[0])
         }
         if(this.props.onSubmit !== undefined){
             this.props.onSubmit(newWorkout)
@@ -42,14 +44,14 @@ class WorkoutForm extends Component {
     }
 
     render(){
-        let {valueInput1, valueInput2, min} = this.state
+        let {valueInput1, valueInput2, min, selectionList} = this.state
         return(
             <form className="container WorkoutForm" onSubmit={this.handleSubmit.bind(this)} data-testid="form">
                 <input name="time" type="number" min="1" value={valueInput1} onChange={this.handleValueInput1.bind(this)}/>
                 <select name="type" id="type">
-                    <option value="run">Run</option>
-                    <option value="swimming">Swimming</option>
-                    <option value="bike">Bike</option>
+                    {selectionList.map((opt, _index)=>{
+                        return(<option key={_index} value={opt}>{opt}</option>)
+                    })}
                 </select>
                 <input name="date" type="date" min={min} value={valueInput2} onChange={this.handleValueInput2.bind(this)}/>
                 <button type="submit" data-testid="form-submit">Add</button>
