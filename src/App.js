@@ -17,6 +17,12 @@ class App extends Component {
     this.setState({workoutList})
   }
 
+  handleDeleteWorkoutSubmition = (delWorkout) => {
+    let {workoutList} = this.state
+    workoutList = workoutList.filter((it, _index)=>_index !== delWorkout)
+    this.setState({workoutList})
+  }
+
   render(){
     let {workoutList} = this.state
     let temp = 0
@@ -29,7 +35,7 @@ class App extends Component {
           Workout Log
         </header>
         <WorkoutForm onSubmit={this.handleNewWorkoutSubmition.bind(this)}/>
-        <WorkoutList list={workoutList}/>
+        <WorkoutList handleDelete={this.handleDeleteWorkoutSubmition} list={workoutList}/>
         <Counter counter={temp}/>
       </div>
     );

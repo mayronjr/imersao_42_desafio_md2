@@ -16,7 +16,11 @@ exports[`matches snapshot 1`] = `
         9/24/2011
       </td>
       <td>
-        Excluir
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>

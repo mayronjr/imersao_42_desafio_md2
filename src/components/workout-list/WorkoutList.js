@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import WorkoutRow from '../workout-row/WorkoutRow.js';
 
-function WorkoutList({ list }) {
+function WorkoutList({ list, handleDelete }) {
     if (list !== undefined) {
         const header = {
             col1: "Tempo",
@@ -19,7 +19,8 @@ function WorkoutList({ list }) {
                             col1: item.tempo,
                             col2: item.type,
                             col3: item.date.toLocaleDateString(),
-                            id: _index
+                            id: _index,
+                            handleDelete: handleDelete
                         }
                         return (<WorkoutRow item={item} key={_index} />)
                     })}
