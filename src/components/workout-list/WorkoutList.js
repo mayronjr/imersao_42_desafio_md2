@@ -16,7 +16,7 @@ function WorkoutList({ list, handleDelete }) {
                     <WorkoutRow item={header} key={-1} />
                     {list.map((item, _index) => {
                         item = {
-                            col1: item.tempo,
+                            col1: item.tempo + ' h',
                             col2: item.type,
                             col3: item.date.toLocaleDateString(),
                             id: _index,

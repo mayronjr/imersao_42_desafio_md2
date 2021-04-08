@@ -24,7 +24,7 @@ exports[`matches snapshot 1`] = `
       data-testid="row-0"
     >
       <td>
-        1
+        1 h
       </td>
       <td>
         Run
@@ -36,7 +36,7 @@ exports[`matches snapshot 1`] = `
         <button
           onClick={[Function]}
         >
-          Excluir
+          Delete
         </button>
       </td>
     </tr>
@@ -44,7 +44,7 @@ exports[`matches snapshot 1`] = `
       data-testid="row-1"
     >
       <td>
-        3
+        3 h
       </td>
       <td>
         Swimming
@@ -56,7 +56,7 @@ exports[`matches snapshot 1`] = `
         <button
           onClick={[Function]}
         >
-          Excluir
+          Delete
         </button>
       </td>
     </tr>
