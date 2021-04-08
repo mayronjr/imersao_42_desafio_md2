@@ -18,17 +18,17 @@ exports[`matches snapshot 1`] = `
     name="type"
   >
     <option
-      value="run"
+      value="Run"
     >
       Run
     </option>
     <option
-      value="swimming"
+      value="Swimming"
     >
       Swimming
     </option>
     <option
-      value="bike"
+      value="Bike"
     >
       Bike
     </option>

@@ -25,7 +25,7 @@ it('renders WorkoutInput Correctly', () => {
     const { getByTestId } = render(<WorkoutForm />)
     expect(getByTestId('form')).toHaveFormValues({
         time: 1,
-        type: 'run',
+        type: 'Run',
         date: getDateInInputFormat()
     })
 })
